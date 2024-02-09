@@ -1,11 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
+from model_utils.managers import InheritanceManager
 
 # Meta parent class for storing alike fields(title,description...)
 class FeedCard(models.Model):
 	title = models.CharField(max_length=100, blank=True)
 	description = models.TextField(blank=True)
 	number_of_likes = models.IntegerField(default=0)
+
+	# Need this to hand child classes
+	objects = InheritanceManager()
 
 # Created separate class for likes to make it easier to do analytics
 class Likes(models.Model):

@@ -1,0 +1,17 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/feed_cards.css' %}">
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="card-container">
+    {% for card in feed_cards %}
+    <div class="my-card">
+        <h2>{{ card.title }}</h2>
+        <p>{{ card.description }}</p>
+        <div class="icons">
+            <i class="fa fa-heart"></i>
+            <i class="fa fa-share"></i>
+        </div>
+    </div>
+    {% endfor %}
+</div>

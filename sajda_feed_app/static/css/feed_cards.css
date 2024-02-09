@@ -1,0 +1,41 @@
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.my-card {
+    margin-top: 1.75vh;
+    background-color: #f9c74f;
+    color: #fff;
+    border-radius: 8px;
+    padding: 1em;
+    width: 40%;
+    height: 24vh;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.icons {
+    margin-top: 1em;
+}
+
+.icons i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #333;
+    cursor: pointer;
+}
+
+.icons i:hover {
+    color: #f25042;
+}
+
+@media only screen and (max-width: 800px) {
+    .my-card {
+        width: 50%;
+    }
+}
