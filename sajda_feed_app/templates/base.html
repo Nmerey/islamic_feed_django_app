@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %} Sajda Feed App {% endblock %}</title>
+	<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	{% load bootstrap5 %}
+	{% bootstrap_css %}
+	{% bootstrap_javascript %}
+	{% load static %}
+
+	<link rel="stylesheet" href="{% static 'css/feed_cards.css' %}">
+
+</head>
+<body>
+	<nav class="navbar sticky-top navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Sajda Feed</a>
+			<a class="nav-link">{{ current_user.username }}</a>
+		</div>
+	</nav>
+	<div class="container">
+		{% block content %}
+
+		{% endblock %}
+	</div>
+</body>
+</html>

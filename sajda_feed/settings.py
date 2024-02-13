@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sajda_feed_app',
+    'sajda_feed_app.apps.SajdaFeedAppConfig',
     'rest_framework',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +62,7 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ],
 }
 

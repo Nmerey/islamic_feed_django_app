@@ -9,7 +9,6 @@
 
 .my-card {
     margin-top: 1.75vh;
-    background-color: #f9c74f;
     color: #fff;
     border-radius: 8px;
     padding: 1em;
@@ -19,8 +18,35 @@
     text-align: center;
 }
 
+.quran-card{
+    background-color: #7c98c8;
+}
+
+.like-group {
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+}
+
+.like-count {
+    color: #333;
+    text-align: center;
+    font-size: x-large;
+    text-decoration: none;
+}
+
 .icons {
     margin-top: 1em;
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: baseline;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-right: 1em;
 }
 
 .icons i {
