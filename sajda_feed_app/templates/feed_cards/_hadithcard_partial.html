@@ -1,0 +1,28 @@
+<div id="hadithCardIndicators" class="carousel slide mt-4">
+	<div class="carousel-inner">
+		{% for card in cards %}
+		<div class="carousel-item {% if forloop.first%}active{%endif%}">
+			<div class="card bg-dark text-light">
+				<div class="card-header">
+					Hadith of the day
+				</div>
+				<div class="card-body text-center">
+					<blockquote class="blockquote mb-0">
+						<p class="text-break fs-4 py-2">{{ card.hadith_text }}</p>
+						<p class="py-2">{{ card.description }}</p>
+						<footer class="blockquote-footer"><cite title="Source Title"> {{ card.narrator }} </cite></footer>
+					</blockquote>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	<button class="carousel-control-prev" type="button" data-bs-target="#hadithCardIndicators" data-bs-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Previous</span>
+	</button>
+	<button class="carousel-control-next" type="button" data-bs-target="#hadithCardIndicators" data-bs-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Next</span>
+	</button>
+</div>
