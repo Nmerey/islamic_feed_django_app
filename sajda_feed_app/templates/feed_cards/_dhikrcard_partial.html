@@ -1,3 +1,4 @@
+{% if current_user %}
 <div id="#quranCardCaroulselIndicators" class="carousel slide mt-4">
 	<div class="carousel-inner">
 		{% for card in cards %}
@@ -6,12 +7,16 @@
 			{% include './forms/_like_form_partial.html' %}
 			<div class="card bg-dark text-light">
 				<div class="card-header">
-					<p> Ayah of the day </p>
+					<p> Dhikr Progression </p>
 				</div>
 				<div class="card-body text-center">
+					<p class="fs-4" >{{ card.title }}</p>
+					<div class="progress mx-5 my-3" role="progressbar" aria-label="Basic example" aria-valuenow="{{ card.user_progress }}" aria-valuemin="0" aria-valuemax="100">
+						<div style="width:{{ card.user_progress}}%;" class="progress-bar"></div>
+					</div>
 					<blockquote class="blockquote mb-0">
-						<p class="text-break fs-4">{{ card.arabic_text }}</p>
-						<footer class="blockquote-footer"><cite title="Source Title">{{card.title}}:{{card.ayah_number}}</cite></footer>
+						<p class="text-break fs-4">{{ card.description }}</p>
+						<footer class="blockquote-footer"><cite title="Source Title"> last read: {{card.last_read_date|timesince}} ago</cite></footer>
 					</blockquote>
 				</div>
 			</div>
@@ -27,3 +32,4 @@
 		<span class="visually-hidden">Next</span>
 	</button>
 </div>
+{%endif%}

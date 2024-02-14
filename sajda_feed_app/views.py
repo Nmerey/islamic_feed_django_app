@@ -16,6 +16,7 @@ class FeedCardList(APIView):
         queryset = {}
 
         access_token = request.GET.get('access_token')
+        current_user = None
 
         if access_token:
         	try:
