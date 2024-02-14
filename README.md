@@ -41,10 +41,18 @@ python3 manage.py migrate
 ```bash
 python3 manage.py seed
 ```
-
+**Please make ImageCards yourself by uploading images**
 ### Running the Server
 
 **Start the Django development server:**
+
+- Collect static files
+
+```bash
+python3 manage.py collectstatic
+```
+- To run server locally
+
 ```bash
 python3 manage.py runserver
 ```
