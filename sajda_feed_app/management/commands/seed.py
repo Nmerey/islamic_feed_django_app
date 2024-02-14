@@ -10,10 +10,10 @@ class Command(BaseCommand):
 		seed_data()
 
 def seed_data():
-    # print('Creating admin user')
-    # print('username: admin, password: 1234')
+    print('Creating admin user')
+    print('username: admin, password: 1234')
 
-    # User.objects.create(username='admin', password='1234')
+    User.objects.create(username='admin', password='1234')
 
     print('Create CustomUser for access_token')
 

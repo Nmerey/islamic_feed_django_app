@@ -44,6 +44,14 @@ python manage.py runserver
 
 Open your web browser and navigate to http://127.0.0.1:8000/ to view the application.
 
+### Authorization
+
+- In order to use personal cards(e.g Dhikr Card) and Like functionalities you need to pass `access_token` as param.
+
+**Default `access_token` is `some-random-access-token` which is generated in seed file tied to one-to-one admin user**
+
+Open your web browser and navigate to http://localhost:8000/?access_token=some-random-access-token to view the application as user.
+
 ### API Endpoints
 
 - GET /: List all feed cards and hompage.
