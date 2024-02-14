@@ -22,31 +22,39 @@ cd your_repository
 
 3. **Install dependencies:**
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 ### Database Setup
-
-1. **Apply database migrations:**
+1. **Create database:**
 ```bash
-python manage.py migrate
+createdb sajda_feed_db 
 ```
-2. **(Optional) Populate the database with seed data:**
+2. **Make migrations**
 ```bash
-python manage.py seed
+python3 manage.py makemigrations
+```
+3. **Apply database migrations:**
+```bash
+python3 manage.py migrate
+```
+4. **Populate the database with seed data:**
+```bash
+python3 manage.py seed
 ```
 
 ### Running the Server
 
 **Start the Django development server:**
 ```bash
-python manage.py runserver
+python3 manage.py runserver
 ```
 
 Open your web browser and navigate to http://127.0.0.1:8000/ to view the application.
 
 ### Authorization
 
-- In order to use personal cards(e.g Dhikr Card) and Like functionalities you need to pass `access_token` as param.
+- Default admin user: ` username: admin , password: 1234 `
+- In order to see personal cards(e.g Dhikr Card) and use Like functionalities you need to pass `access_token` as param.
 
 **Default `access_token` is `some-random-access-token` which is generated in seed file tied to one-to-one admin user**
 
