@@ -11,7 +11,7 @@ router = routers.DefaultRouter()
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('api/feed_cards/', views.FeedCardList.as_view(), name="feed_cards"),
+    path('', views.FeedCardList.as_view(), name="feed_cards"),
     path('api/likes/', views.LikeCreateAPIView.as_view(), name='like_create'),
 ]
 
