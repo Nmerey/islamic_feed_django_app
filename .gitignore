@@ -1,3 +1,4 @@
 /static
 /staticfiles
 /media
+__pycache__/
