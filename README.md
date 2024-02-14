@@ -17,7 +17,7 @@ git clone https://github.com/your_username/your_repository.git
 ```
 2. **Navigate to the project directory:**
 ```bash
-cd your_repository
+cd sajda_feed_app
 ```
 
 3. **Install dependencies:**
