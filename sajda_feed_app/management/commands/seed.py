@@ -10,8 +10,14 @@ class Command(BaseCommand):
 		seed_data()
 
 def seed_data():
-    print('Creating admin user')
-    print('username: admin, password: 1234')
+    # print('Creating admin user')
+    # print('username: admin, password: 1234')
+
+    # User.objects.create(username='admin', password='1234')
+
+    print('Create CustomUser for access_token')
+
+    CustomUser.objects.create(user=User.objects.last(), access_token='some-random-access-token')
 
     print('Creating Quran cards')
 
@@ -56,6 +62,7 @@ def seed_data():
     		title='Awe some lecture about Quran',
     		description='Nouman Ali Khan give in depth knowledge about some ayah!',
     		video_id='Y8kCy2ktANA?si=UqKqfhmAAosGuLj2',
+    		in_app=True,
     		)
 
     print("Please populate youtube card and imagecard yourself")
