@@ -2,6 +2,7 @@ from django.core.management.base import BaseCommand
 from sajda_feed_app.models import *
 import random
 import datetime
+from django.contrib.auth.models import User
 
 class Command(BaseCommand):
 	help = 'seeding database'
@@ -13,11 +14,14 @@ def seed_data():
     print('Creating admin user')
     print('username: admin, password: 1234')
 
-    User.objects.create(username='admin', password='1234')
+    user = User.objects.create_user('admin', password='1234')
+    user.is_superuser = True
+    user.is_staff = True
+    user.save()
 
     print('Create CustomUser for access_token')
 
-    CustomUser.objects.create(user=User.objects.last(), access_token='some-random-access-token')
+    CustomUser.objects.create(user=user, access_token='some-random-access-token')
 
     print('Creating Quran cards')
 

@@ -37,7 +37,7 @@ class HadithCard(FeedCard):
 	hadith_text = models.TextField()
 
 class PictureCard(FeedCard):
-	image = models.ImageField(upload_to='inspiring_pictures/')
+	image = models.ImageField(upload_to='inspiring_pictures/',default='https://placehold.co/600x400')
 
 class DhikrCard(FeedCard):
 	user_progress 	= models.IntegerField()
@@ -45,5 +45,5 @@ class DhikrCard(FeedCard):
 
 class YouTubeCard(FeedCard):
 	video_id 		= models.TextField(max_length=100)
-	preview_image 	= models.ImageField(upload_to='youtube_videos/')
+	preview_image 	= models.ImageField(upload_to='youtube_videos/',default='https://placehold.co/600x400')
 	in_app 			= models.BooleanField(default=False)

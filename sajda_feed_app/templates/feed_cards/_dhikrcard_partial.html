@@ -1,5 +1,5 @@
 {% if current_user %}
-<div id="#quranCardCaroulselIndicators" class="carousel slide mt-4">
+<div id="dhikrCardIndicators" class="carousel slide mt-4">
 	<div class="carousel-inner">
 		{% for card in cards %}
 		<div class="carousel-item {% if forloop.first%}active{%endif%}">
@@ -11,7 +11,7 @@
 				</div>
 				<div class="card-body text-center">
 					<p class="fs-4" >{{ card.title }}</p>
-					<div class="progress mx-5 my-3" role="progressbar" aria-label="Basic example" aria-valuenow="{{ card.user_progress }}" aria-valuemin="0" aria-valuemax="100">
+					<div style="margin-right: 15%; margin-left: 15%;" class="progress my-3" role="progressbar" aria-label="Basic example" aria-valuenow="{{ card.user_progress }}" aria-valuemin="0" aria-valuemax="100">
 						<div style="width:{{ card.user_progress}}%;" class="progress-bar"></div>
 					</div>
 					<blockquote class="blockquote mb-0">
@@ -23,11 +23,11 @@
 		</div>
 		{% endfor %}
 	</div>
-	<button class="carousel-control-prev" type="button" data-bs-target="#quranCardCaroulselIndicators" data-bs-slide="prev">
+	<button class="carousel-control-prev" type="button" data-bs-target="#dhikrCardIndicators" data-bs-slide="prev">
 		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 		<span class="visually-hidden">Previous</span>
 	</button>
-	<button class="carousel-control-next" type="button" data-bs-target="#quranCardCaroulselIndicators" data-bs-slide="next">
+	<button class="carousel-control-next" type="button" data-bs-target="#dhikrCardIndicators" data-bs-slide="next">
 		<span class="carousel-control-next-icon" aria-hidden="true"></span>
 		<span class="visually-hidden">Next</span>
 	</button>

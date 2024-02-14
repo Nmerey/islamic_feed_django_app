@@ -16,13 +16,13 @@
 
 </head>
 <body>
-	<nav class="navbar sticky-top navbar-light bg-light">
+	<nav class="navbar sticky-top navbar-dark bg-dark">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">Sajda Feed</a>
 			<a class="nav-link">{{ current_user.username }}</a>
 		</div>
 	</nav>
-	<div class="container">
+	<div class="container w-75">
 		{% block content %}
 
 		{% endblock %}
