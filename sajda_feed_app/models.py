@@ -37,13 +37,21 @@ class HadithCard(FeedCard):
 	hadith_text = models.TextField()
 
 class PictureCard(FeedCard):
-	image = models.ImageField(upload_to='inspiring_pictures/',default='https://placehold.co/600x400')
+	image = models.ImageField(upload_to='inspiring_pictures/',default='media/placeholders/image-card-placeholder.jpg')
 
 class DhikrCard(FeedCard):
 	user_progress 	= models.IntegerField()
 	last_read_date 	= models.DateField()
 
+	class Meta:
+		constraints = [
+			models.CheckConstraint(
+				check=models.Q(user_progress__gte=0) & models.Q(user_progress__lt=100),
+				name='user_progress is between 1 and 100',
+				)
+		]
+
 class YouTubeCard(FeedCard):
 	video_id 		= models.TextField(max_length=100)
-	preview_image 	= models.ImageField(upload_to='youtube_videos/',default='https://placehold.co/600x400')
+	preview_image 	= models.ImageField(upload_to='youtube_videos/',default='media/placeholders/youtube-card-placeholder.jpg')
 	in_app 			= models.BooleanField(default=False)

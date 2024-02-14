@@ -11,7 +11,7 @@ class Command(BaseCommand):
 		seed_data()
 
 def seed_data():
-    print('Creating admin user')
+    print('Generating admin user')
     print('username: admin, password: 1234')
 
     user = User.objects.create_user('admin', password='1234')
@@ -23,7 +23,7 @@ def seed_data():
 
     CustomUser.objects.create(user=user, access_token='some-random-access-token')
 
-    print('Creating Quran cards')
+    print('Generating Quran cards')
 
     for i in range(5):
         QuranCard.objects.create(
@@ -33,7 +33,7 @@ def seed_data():
             arabic_text='رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً ۚ إِنَّكَ أَنتَ ٱلْوَهَّابُ ٨',
             )
 
-    print('Creating Hadith cards')
+    print('Generating Hadith cards')
 
     for i in range(5):
         HadithCard.objects.create(
@@ -43,7 +43,7 @@ def seed_data():
             description='Hell will be brought forth on that Day (of Resurrection) having seventy thousand bridles, and with every handle will be seventy thousand angels dragging it',
             )
 
-    print('Creating Dhikr cards')
+    print('Generating Dhikr cards')
     
     # Define start and end dates for the range
     s_date = datetime.datetime(2022, 1, 1)
@@ -61,6 +61,8 @@ def seed_data():
             last_read_date=r_date,
         )
 
+    print('Generating YouTubeCard cards')
+    
     for i in range(5):
     	YouTubeCard.objects.create(
     		title='Awe some lecture about Quran',
@@ -69,4 +71,4 @@ def seed_data():
     		in_app=True,
     		)
 
-    print("Please populate youtube card and imagecard yourself")
+

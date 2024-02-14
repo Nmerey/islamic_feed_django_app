@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'sajda_feed_app.apps.SajdaFeedAppConfig',
     'rest_framework',
     'bootstrap5',
+    'taggit',
 ]
 
 MIDDLEWARE = [
