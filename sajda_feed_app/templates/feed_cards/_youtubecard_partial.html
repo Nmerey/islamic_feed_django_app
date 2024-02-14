@@ -1,9 +1,13 @@
-<div id="hadithCardIndicators" class="carousel slide mt-4">
+<div id="#pictureCardIndicators" class="carousel slide mt-4">
 	<div class="carousel-inner">
 		{% for card in cards %}
-		<div class="carousel-item {% if forloop.first%}active{%endif%}">
-			<div class="card bg-dark text-light">
-				<!-- Like and Share buttons group -->
+		<div class="card bg-dark text-light mt-4">
+			{% if card.in_app %}
+			<iframe class="w-100" height="315" src="https://www.youtube.com/embed/{{ card.video_id }}" frameborder="0" allowfullscreen></iframe>
+			{% else %}
+			<img src="{{ card.preview_image.url }}" class="card-img-top opacity-50" alt="{{ card.preview_image.url }}">
+			{% endif %}
+			<div class="card-body">
 				<form action="{% url 'like_create' %}" method="post" >
 					{% csrf_token %}
 					<div style="z-index: 2;" class="position-absolute w-100 d-flex flex-row justify-content-end mt-2 mr-2">
@@ -21,25 +25,17 @@
 						<a href="#share" class="btn btn-primary mx-2 btn-sm"><i class="fa fa-share" ></i></a>
 					</div>
 				</form>
-				<div class="card-header py-3">
-					Hadith of the day
-				</div>
-				<div class="card-body text-center">
-					<blockquote class="blockquote mb-0">
-						<p class="text-break fs-4 py-2">{{ card.hadith_text }}</p>
-						<p class="py-2">{{ card.description }}</p>
-						<footer class="blockquote-footer"><cite title="Source Title"> {{ card.narrator }} </cite></footer>
-					</blockquote>
-				</div>
+				<h5 class="card-title">{{ card.title }}</h5>
+				<p class="card-text">{{ card.description }}</p>
 			</div>
 		</div>
 		{% endfor %}
 	</div>
-	<button class="carousel-control-prev" type="button" data-bs-target="#hadithCardIndicators" data-bs-slide="prev">
+	<button class="carousel-control-prev" type="button" data-bs-target="#pictureCardIndicators" data-bs-slide="prev">
 		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 		<span class="visually-hidden">Previous</span>
 	</button>
-	<button class="carousel-control-next" type="button" data-bs-target="#hadithCardIndicators" data-bs-slide="next">
+	<button class="carousel-control-next" type="button" data-bs-target="#pictureCardIndicators" data-bs-slide="next">
 		<span class="carousel-control-next-icon" aria-hidden="true"></span>
 		<span class="visually-hidden">Next</span>
 	</button>

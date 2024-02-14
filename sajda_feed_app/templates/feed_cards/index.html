@@ -2,7 +2,6 @@
 {% block content%}
     {% for card_type, cards in card_list.items %}
         {% if cards %}
-        <p>{{ card_type }}</p>
             {% with partial_prefix="feed_cards/_" partial_suffix="_partial.html"%}
                 {% include partial_prefix|add:card_type|add:partial_suffix|lower %}
             {% endwith%}

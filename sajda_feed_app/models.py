@@ -44,5 +44,6 @@ class DhikrCard(FeedCard):
 	last_read_date 	= models.DateField()
 
 class YouTubeCard(FeedCard):
+	video_id 		= models.TextField(max_length=100)
 	preview_image 	= models.ImageField(upload_to='youtube_videos/')
 	in_app 			= models.BooleanField(default=False)

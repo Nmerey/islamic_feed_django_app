@@ -4,6 +4,23 @@
 		<div class="carousel-item {% if forloop.first%}active{%endif%}">
 			<p>{{ card.img.url }}</p>
 			<div class="card text-light bg-dark">
+				<form action="{% url 'like_create' %}" method="post" >
+					{% csrf_token %}
+					<div style="z-index: 2;" class="position-absolute w-100 d-flex flex-row justify-content-end mt-2 mr-2">
+						<!-- Hidden inputs of card id and owner id -->
+						<input type="hidden" name="feed_card" value="{{ card.id }}">
+						<input type="hidden" name="owner" value="{{ current_user.id }}">
+
+						<button type="submit" class="btn btn-primary btn-sm position-relative">
+							<i class="fa fa-heart"></i>
+							<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+								{{ card.number_of_likes }}
+								<span class="visually-hidden">unread messages</span>
+							</span>
+						</button>
+						<a href="#share" class="btn btn-primary mx-2 btn-sm"><i class="fa fa-share" ></i></a>
+					</div>
+				</form>
 				<img src="{{ card.image.url }}" class="card-img opacity-50" alt="{{ card.img.url }}" width="100%" height="100%">
 				<div class="card-img-overlay">
 					<div class="d-flex justify-content-center align-items-center flex-column h-100">
